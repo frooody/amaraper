@@ -9,7 +9,8 @@ You typing the name of object you want to scrap. The program returning to you .c
 1. Install this repo.
 2. Go to directory where you installed repository.
 3. CD to this dir through consol.
-4. run file main.py with argument of which object you want to find(e.g. python3 main.py study_table)
+4. Run file main.py with argument of which object you want to find(e.g. python3 main.py study_table)
+5. Since script done his work you'll get the file in the same directory that you had with name of object that you searched with .csv extension
 
 ### Project setup
 ```
