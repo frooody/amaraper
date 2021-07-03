@@ -1,7 +1,7 @@
 # amaraper
 This is simple headless Amazon scraper.
 
-What the program do?\n
+What the program do?
 You typing the name of object you want to scrap. The program returning to you .csv file with title, price, raiting, url to an object and url to picture of that project.
 
 How to use this script?
