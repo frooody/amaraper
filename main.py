@@ -2,7 +2,6 @@ import csv
 import sys
 from bs4 import BeautifulSoup
 from selenium import webdriver
-import time
 
 user_agent = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.83 Safari/537.36"
 
@@ -67,7 +66,6 @@ def find_info(item):
     with open(filename, 'a') as f:
         write = csv.writer(f)
         write.writerow(result)
-    
 
 soup = BeautifulSoup(driver.page_source, 'html.parser')
 results = soup.find_all('div', {'data-component-type': 's-search-result'})
@@ -77,12 +75,10 @@ nav = soup.find('div', 'a-section a-spacing-none a-padding-base')
 last_index = nav.find_all('li', {'aria-disabled': 'true'})
 final_result_of_pages = int(last_index[1].text)
 
-
 items = []
 for page in range(2, final_result_of_pages + 1):
     soup = BeautifulSoup(driver.page_source, 'html.parser')
     results = soup.find_all('div', {'data-component-type': 's-search-result'})
-
     print("Scanning page #" + str(page-1) + "...")
     search(sys.argv[1], page)
     for i in results:
@@ -90,6 +86,4 @@ for page in range(2, final_result_of_pages + 1):
         if item:
             items.append(item)
     page += 1
-    
-    
 print("The .csv file is ready!")
