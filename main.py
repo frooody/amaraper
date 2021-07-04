@@ -86,4 +86,4 @@ for page in range(2, final_result_of_pages + 1):
         if item:
             items.append(item)
     page += 1
-print("The .csv file is ready!")
+print("The" + str(filename) + ".csv file is ready!")
